@@ -1,5 +1,4 @@
 const mineflayer = require('mineflayer')
-const mineflayerViewer = require('prismarine-viewer').mineflayer
 const fs = require('fs');
 let rawdata = fs.readFileSync('config.json');
 let data = JSON.parse(rawdata);
@@ -54,8 +53,5 @@ bot.on('time', function() {
 
 bot.on('spawn',function() {
     connected=1;
-});
-bot.once('spawn', () => {
-  mineflayerViewer(bot, { port: 3007, firstPerson: true })
 });
 
